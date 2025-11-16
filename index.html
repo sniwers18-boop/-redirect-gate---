@@ -21,11 +21,11 @@
     .message {
       max-width: 90%;
     }
-    .message h1 {
+    h1 {
       font-size: 2em;
       margin-bottom: 0.5em;
     }
-    .message p {
+    p {
       font-size: 1.2em;
       color: #ccc;
     }
@@ -35,13 +35,13 @@
   <div class="message">
     <h1>Access Restricted</h1>
     <p>This site is only accessible in desktop mode.</p>
-    <p>Please switch to desktop mode in your browser settings to continue.</p>
+    <p>If redirected to mobile view, tap your browser menu and select “Request Desktop Site” again.</p>
   </div>
 
   <script>
     // Redirect if screen width is wide enough (desktop or desktop mode on mobile)
     if (window.innerWidth >= 1024) {
-      window.location.href = "https://sites.google.com/view/servicesofferedbyus/home";
+      window.location.replace("https://sites.google.com/view/servicesofferedbyus/home");
     }
   </script>
 </body>
