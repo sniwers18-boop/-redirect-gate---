@@ -4,14 +4,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Redirect Gate</title>
+  <title>Access Gate</title>
   <style>
     body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Segoe UI', sans-serif;
       background: #111;
       color: #fff;
+      font-family: sans-serif;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -35,16 +33,16 @@
   <div class="message">
     <h1>Access Restricted</h1>
     <p>This site is only accessible in desktop mode.</p>
-    <p>If redirected to mobile view, tap your browser menu and select “Request Desktop Site” again.</p>
+    <p>Please switch to desktop mode in your browser settings to continue.</p>
   </div>
 
   <script>
-    // Wait a moment to allow browser to apply desktop mode layout
-    setTimeout(() => {
-      if (window.innerWidth >= 1024) {
-        window.location.replace("https://sites.google.com/view/servicesofferedbyus/home");
-      }
-    }, 1000); // 1 second delay
+    const isMobile = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+    const isDesktopMode = window.innerWidth > 1024;
+
+    if (!isMobile || isDesktopMode) {
+      window.location.replace("https://sites.google.com/view/servicesofferedbyus/home");
+    }
   </script>
 </body>
 </html>
