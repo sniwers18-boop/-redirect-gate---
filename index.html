@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Access Gate</title>
+  <style>
+    body {
+      background: #111;
+      color: #fff;
+      font-family: sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+    }
+    .message {
+      max-width: 90%;
+    }
+    h1 {
+      font-size: 2em;
+      margin-bottom: 0.5em;
+    }
+    p {
+      font-size: 1.2em;
+      color: #ccc;
+    }
+  </style>
+</head>
+<body>
+  <div class="message">
+    <h1>Access Restricted</h1>
+    <p>This site is only accessible in desktop mode.</p>
+    <p>Please switch to desktop mode in your browser settings to continue.</p>
+  </div>
+
+  <script>
+    const isMobile = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+    const isDesktopMode = window.innerWidth > 1024;
+
+    if (!isMobile || isDesktopMode) {
+      window.location.replace("https://sites.google.com/view/servicesofferedbyus/home");
+    }
+  </script>
+</body>
+</html>
+
